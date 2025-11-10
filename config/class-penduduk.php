@@ -18,17 +18,16 @@ class penduduk extends Database {
         $domisili    = $data['domisili'];
         $perkerjaan  = $data['perkerjaan'];
         $agama       = $data['agama'];
-        $gender      = $data['gender'];
         $status      = $data['status'];
         // Menyiapkan query SQL untuk insert data menggunakan prepared statement
-        $query = "INSERT INTO tb_penduduk (nik, nama, tempat_lhr, tanggal_lhr, tahun_lhr,  alamat, provinsi, domisili, perkerjaan, agama, gender, sts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO tb_penduduk (nik, nama, tempat_lhr, tanggal_lhr, tahun_lhr,  alamat, provinsi, domisili, perkerjaan, agama, sts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         // Mengecek apakah statement berhasil disiapkan
         if(!$stmt){
             return false;
         }
         // Memasukkan parameter ke statement
-        $stmt->bind_param("ssssssssssss", $nik, $nama, $tempat , $tanggal , $tahun , $alamat , $provinsi , $domisili, $perkerjaan, $agama, $gender,$status );
+        $stmt->bind_param("sssssssssss", $nik, $nama, $tempat , $tanggal , $tahun , $alamat , $provinsi , $domisili, $perkerjaan, $agama,$status );
         $result = $stmt->execute();
         $stmt->close();
         // Mengembalikan hasil eksekusi query
@@ -38,7 +37,7 @@ class penduduk extends Database {
     // Method untuk mengambil semua data penduduk
     public function getAllPenduduk(){
         // Menyiapkan query SQL untuk mengambil data penduduk beserta agama dan provinsi
-        $query = "SELECT id_pnddk, nik, nama, tempat_lhr, tanggal_lhr, tahun_lhr,  alamat, provinsi, domisili, perkerjaan, agama, gender, sts
+        $query = "SELECT id_pnddk, nik, nama, tempat_lhr, tanggal_lhr, tahun_lhr,  alamat, provinsi, domisili, perkerjaan, agama,  sts
                   FROM tb_penduduk
                   JOIN tb_agama ON agama = kode_agama
                   JOIN tb_provinsi ON provinsi = id_provinsi";
@@ -61,7 +60,6 @@ class penduduk extends Database {
                     'domisili' => $row['domisili'],
                     'perkerjaan' => $row['perkerjaan'],
                      'agama' => $row['agama'],
-                    'gender' => $row['gender'],
                     'status' => $row['sts'],
                 ];
             }
@@ -98,7 +96,6 @@ class penduduk extends Database {
              'domisili' => $row['domisili'],
              'perkerjaan' => $row['perkerjaan'],
              'agama' => $row['agama'],
-             'gender' => $row['gender'],
              'status' => $row['sts'],
             ];
         }
@@ -121,16 +118,15 @@ class penduduk extends Database {
         $domisili    = $data['domisili'];
         $perkerjaan  = $data['perkerjaan'];
         $agama       = $data['agama'];
-        $gender      = $data['gender'];
         $status      = $data['status'];
         // Menyiapkan query SQL untuk update data menggunakan prepared statement
-        $query = "UPDATE tb_penduduk SET nik = ?, nama = ?, tempat_lhr = ?, tanggal_lhr = ?,tahun_lhr = ?, alamat = ?, provinsi = ?, domisili = ?, perkerjaan = ?, agama = ?, gender = ?, sts = ? WHERE id_pnddk = ?";
+        $query = "UPDATE tb_penduduk SET nik = ?, nama = ?, tempat_lhr = ?, tanggal_lhr = ?,tahun_lhr = ?, alamat = ?, provinsi = ?, domisili = ?, perkerjaan = ?, agama  = ?, sts = ? WHERE id_pnddk = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
         // Memasukkan parameter ke statement
-        $stmt->bind_param("ssssssssssssi",$nik, $nama, $tempat , $tanggal , $tahun , $alamat , $provinsi , $domisili, $perkerjaan, $agama, $gender,$status, $id);
+        $stmt->bind_param("sssssssssssi",$nik, $nama, $tempat , $tanggal , $tahun , $alamat , $provinsi , $domisili, $perkerjaan, $agama, $status, $id);
         $result = $stmt->execute();
         $stmt->close();
         // Mengembalikan hasil eksekusi query
@@ -157,7 +153,7 @@ class penduduk extends Database {
         // Menyiapkan LIKE query untuk pencarian
         $likeQuery = "%".$kataKunci."%";
         // Menyiapkan query SQL untuk pencarian data penduduk menggunakan prepared statement
-        $query = "SELECT id_pnddk, nik, nama, tempat_lhr, tanggal_lhr, tahun_lhr,  alamat, provinsi, domisili, perkerjaan, agama, gender, sts
+        $query = "SELECT id_pnddk, nik, nama, tempat_lhr, tanggal_lhr, tahun_lhr,  alamat, provinsi, domisili, perkerjaan, agama, sts
                   FROM tb_penduduk
                   JOIN tb_agama ON agama = kode_agama
                   JOIN tb_provinsi ON provinsi = id_provinsi
@@ -189,7 +185,6 @@ class penduduk extends Database {
                     'domisili' => $row['domisili'],
                     'perkerjaan' => $row['perkerjaan'],
                      'agama' => $row['agama'],
-                    'gender' => $row['gender'],
                     'status' => $row['sts'],
                 ];
             }

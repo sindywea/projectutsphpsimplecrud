@@ -45,15 +45,7 @@ class MasterData extends Database {
         
         ];
     }
-    // Method untuk mendapatkan daftar status penduduk menggunakan array statis
-    public function getGender(){
-        return [
-            ['id' => 1, 'nama' => 'Laki-laki'],
-            ['id' => 2, 'nama' => 'Perempuan'],
-    
-        ];
-    }
-
+   
     // Method untuk input data agama
     public function inputAgama($data){
         $kodeAgama = $data['kode'];

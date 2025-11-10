@@ -17,7 +17,6 @@ $dataPenduduk = [
     'domisili' => $_POST['domisili'],
     'perkerjaan' => $_POST['perkerjaan'],
      'agama'   => $_POST['agama'],
-    'gender'   => $_POST['gender'],
     'status'   => $_POST['status']
 ];
 // Memanggil method editPenduduk untuk mengupdate data penduduk dengan parameter array $dataPenduduk

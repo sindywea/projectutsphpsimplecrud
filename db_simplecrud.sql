@@ -51,17 +51,16 @@ CREATE TABLE `tb_penduduk` (
   `domisili` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `perkerjaan` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `agama` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `gender` enum('laki laki','perempuan') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sts` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_pnddk`,`sts`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_penduduk` */
 
-insert  into `tb_penduduk`(`id_pnddk`,`nik`,`nama`,`tempat_lhr`,`tanggal_lhr`,`tahun_lhr`,`alamat`,`provinsi`,`domisili`,`perkerjaan`,`agama`,`gender`,`sts`) values 
-(1,'2345678902345','sindy','labuan bajo','23',2007,'Manggarai',2,'Denpasar','Mahasiswa','DKV','laki laki',1),
-(2,'2345678902345','sindy','labuan bajo','23',2007,'Manggarai',2,'Denpasar','Mahasiswa','ISLAM','laki laki',1),
-(3,'1234567899876','Floren','bali','26',2006,'Manggarai Barat',2,'Denpasar','Mahasiswa','KHATOLIK','perempuan',2);
+insert  into `tb_penduduk`(`id_pnddk`,`nik`,`nama`,`tempat_lhr`,`tanggal_lhr`,`tahun_lhr`,`alamat`,`provinsi`,`domisili`,`perkerjaan`,`agama`,`sts`) values 
+(1,'2345678902345','sindy','labuan bajo','23',2007,'Manggarai',2,'Denpasar','Mahasiswa','DKV',1),
+(2,'2345678902345','sindy','labuan bajo','23',2007,'Manggarai',2,'Denpasar','Mahasiswa','ISLAM',1),
+(4,'23456789023','sindysdsffbh','labuan bajo','23',2007,'Manggarai',1,'Denpasar','Dosen','HINDU',1);
 
 /*Table structure for table `tb_provinsi` */
 

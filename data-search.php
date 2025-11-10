@@ -104,7 +104,6 @@ if(isset($_GET['search'])){
 															<th>Domisili</th>
 															<th>Perkerjaan</th>
 															<th>Agama</th>
-															<th>Gender</th>
 															<th class="text-center">Status</th>
 														</tr>
 													</thead>
@@ -131,7 +130,6 @@ if(isset($_GET['search'])){
 															<td>'.$penduduk['domisili'].'</td>
 															<td>'.$penduduk['perkerjaan'].'</td>
 															<td>'.$penduduk['agama'].'</td>
-															<td>'.$penduduk['gender'].'</td>
 															<td class="text-center">'.$penduduk['status'].'</td>
 															<td class="text-center">
 																<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'data-edit.php?id='.$penduduk['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>

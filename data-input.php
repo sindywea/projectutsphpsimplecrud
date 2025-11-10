@@ -8,8 +8,6 @@ $agamaList = $master->getAgama();
 $provinsiList = $master->getProvinsi();
 // Mengambil daftar status penduduk
 $statusList = $master->getStatus();
-// Mengambil daftar gender penduduk
-$genderList = $master->getGender();
 // Menampilkan alert berdasarkan status yang diterima melalui parameter GET
 if(isset($_GET['status'])){
     // Mengecek nilai parameter GET 'status' dan menampilkan alert yang sesuai menggunakan JavaScript
@@ -121,18 +119,6 @@ if(isset($_GET['status'])){
                                                     // Iterasi daftar agama dan menampilkannya sebagai opsi dalam dropdown
                                                     foreach ($agamaList as $agama){
                                                         echo '<option value="'.$agama['id'].'">'.$agama['nama'].'</option>';
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="gender" class="form-label">Gender</label>
-                                                <select class="form-select" id="gender" name="gender" required>
-                                                    <option value="" selected disabled>Pilih Gender</option>
-                                                    <?php 
-                                                    // Iterasi daftar program studi dan menampilkannya sebagai opsi dalam dropdown
-                                                    foreach ($genderList as $gender){
-                                                        echo '<option value="'.$gender['id'].'">'.$gender['nama'].'</option>';
                                                     }
                                                     ?>
                                                 </select>

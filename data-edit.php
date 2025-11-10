@@ -10,8 +10,6 @@ $agamaList = $master->getagama();
 $provinsiList = $master->getProvinsi();
 // Mengambil daftar status penduduk
 $statusList = $master->getStatus();
-// Mengambil daftar gender penduduk
-$genderList = $master->getGender();
 // Mengambil data penduduk yang akan diedit berdasarkan id dari parameter GET
 $dataPenduduk = $penduduk->getUpdatePenduduk($_GET['id']);
 if(isset($_GET['status'])){
@@ -144,26 +142,7 @@ if(isset($_GET['status'])){
                                                     ?>
                                                 </select>
                                             </div>
-                                             <div class="mb-3">
-                                                <label for="gender" class="form-label">Gender</label>
-                                                <select class="form-select" id="gender" name="gender" required>
-                                                    <option value="" selected disabled>Pilih Gender</option>
-                                                    <?php 
-                                                    // Iterasi daftar gender dan menandai yang sesuai dengan data penduduk yang dipilih
-                                                    foreach ($genderList as $gender){
-                                                        // Menginisialisasi variabel kosong untuk menandai opsi yang dipilih
-                                                        $selectedGender = "";
-                                                        // Mengecek apakah gender saat ini sesuai dengan data penduduk
-                                                        if($dataPenduduk['gender'] == $gender['id']){
-                                                            // Jika sesuai, tandai sebagai opsi yang dipilih
-                                                            $selectedGender = "selected";
-                                                        }
-                                                        // Menampilkan opsi agama dengan penanda yang sesuai
-                                                        echo '<option value="'.$gender['id'].'" '.$selectedGender.'>'.$gender['nama'].'</option>';
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
+                                        
                                             <div class="mb-3">
                                                 <label for="sts" class="form-label">Status</label>
                                                 <select class="form-select" id="status" name="status" required>

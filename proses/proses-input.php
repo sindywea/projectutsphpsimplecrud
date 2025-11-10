@@ -16,7 +16,6 @@ $dataPenduduk = [
     'domisili' => $_POST['domisili'],
     'perkerjaan' => $_POST['perkerjaan'],
      'agama'   => $_POST['agama'],
-    'gender'   => $_POST['gender'],
     'status'   => $_POST['status']
 ];
 // Memanggil method inputPenduduk untuk memasukkan data mahasiswa dengan parameter array $dataPenduduk
