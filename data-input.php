@@ -89,7 +89,7 @@ if(isset($_GET['status'])){
                                             </div>
                                              <div class="mb-3">
                                                 <label for="alamat" class="form-label">Alamat</label>
-                                                <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat Lengkap Sesuai KTP" required></textarea>
+                                               <input type="text" class="form-control"  id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat Lengkap Sesuai KTP" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="provinsi" class="form-label">Provinsi</label>

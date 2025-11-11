@@ -46,7 +46,7 @@ CREATE TABLE `tb_penduduk` (
   `tempat_lhr` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_lhr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tahun_lhr` year NOT NULL,
-  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `alamat` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `provinsi` mediumint NOT NULL,
   `domisili` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `perkerjaan` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
